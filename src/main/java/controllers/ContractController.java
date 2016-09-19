@@ -35,7 +35,7 @@ public class ContractController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public boolean setCar(@RequestBody ContractServiceImpl contract) {
+    public boolean setContract(@RequestBody ContractServiceImpl contract) {
 
         contractServiceImpl.add(contract);
         return true;
