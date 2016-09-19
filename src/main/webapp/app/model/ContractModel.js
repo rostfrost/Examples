@@ -1,7 +1,8 @@
 Ext.define('Contract.model.ContractModel', {
     extend: 'Ext.data.Model',
     fields: ['seriesNumber', 'typeContract', 'dateSigning',
-                'dataBeginning','endDate','sumWithoutNds', 'rateNds', 'sumNds','sumWithNds', 'conformity', 'numberTs', 'note'],
+                'dataBeginning','endDate','sumWithoutNds',
+                'rateNds', 'sumNds','sumWithNds', 'conformity', 'numberTs', 'note'],
 
     proxy: {
         type: 'rest',

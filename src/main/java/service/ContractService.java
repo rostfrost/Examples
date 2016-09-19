@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface ContractService {
     public List<ContractService> getAll(List<Contract> contracts);
+    public void add(ContractServiceImpl contractService);
 }

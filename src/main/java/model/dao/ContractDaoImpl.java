@@ -13,7 +13,7 @@ import java.util.List;
  * Pasechnikov Rostislav
  * 16.09.2016
  */
-public class ContractDaoImpl implements ContractDao{
+public class ContractDaoImpl implements ContractDao {
     private DriverManagerDataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
@@ -42,7 +42,21 @@ public class ContractDaoImpl implements ContractDao{
     }
 
     public void add(Contract contract) {
-
+        String SQL = "insert into ContractFinal (Series, Number, TypeContract,DateSigning," +
+                "DataBeginning, EndDate,SumNds,SumWithNds,Conformity,NumberTs,Note) values (?,?,?,?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(SQL,
+                contract.getSeries(),
+                contract.getNumber(),
+                contract.getTypeContract(),
+                contract.getDateSigning(),
+                contract.getDataBeginning(),
+                contract.getEndDate(),
+                contract.getSumNds(),
+                contract.getSumWithNds(),
+                contract.getConformity(),
+                contract.getNumberTs(),
+                contract.getNote()
+        );
     }
 
     public void update(Contract contract) {

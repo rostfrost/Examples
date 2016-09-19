@@ -72,7 +72,7 @@ public class ContractServiceImpl implements ContractService {
         this.sumNds = sumNds;
     }
 
-    public boolean isConformity() {
+    public boolean getConformity() {
         return conformity;
     }
 
@@ -149,8 +149,11 @@ public class ContractServiceImpl implements ContractService {
                     contract.getDateSigning(),
                     contract.getDataBeginning(),
                     contract.getEndDate(),
-                    contract.getSumWithNds()-contract.getSumNds(),
-                    contract.getSumNds()/((contract.getSumWithNds()-contract.getSumNds())/100),
+                    //Проверить на не ноль
+                    //contract.getSumWithNds()-contract.getSumNds(),
+                    //contract.getSumNds()/((contract.getSumWithNds()-contract.getSumNds())*100), ///!!!!!!!!!!!!!!!!
+                    contract.getSumWithNds(),//!!!!!!!!!!!!!!!!
+                    contract.getSumNds(), //!!!!!!!!!!!!!!!!
                     contract.getSumNds(),
                     contract.getSumWithNds(),
                     contract.getConformity(),
@@ -160,6 +163,22 @@ public class ContractServiceImpl implements ContractService {
             contractsService.add(contractServiceImpl);
         }
         return contractsService;
+    }
+
+    @Override
+    public void add(ContractServiceImpl contractService) {
+        String str []= contractService.getSeriesNumber().split("-");
+         Contract contract = new Contract(str[0],str[1],
+                contractService.getTypeContract(),
+                contractService.getDataBeginning(),
+                contractService.getDateSigning(),
+                contractService.getEndDate(),
+                contractService.getSumNds(),
+                contractService.getSumWithNds(),
+                contractService.getConformity(),
+                contractService.getNumberTs(),
+                contractService.getNote());
+        contractDao.add(contract);
     }
 
     public void setContractDao(ContractDaoImpl contractDao) {

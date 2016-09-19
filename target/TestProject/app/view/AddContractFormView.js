@@ -125,8 +125,8 @@ Ext.define('Contract.view.AddContractFormView', {
                      blankText: 'Это поле должно быть заполнено'
                  },
                  {
-
-                     xtype: 'textfield',
+                     xtype: 'textareafield',
+                     grow : true,
                      name: 'note',
                      fieldLabel: 'Примечание',
                      regex: /^.{1,255}/,
