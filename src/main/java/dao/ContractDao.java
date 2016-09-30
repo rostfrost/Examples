@@ -1,6 +1,6 @@
-package model.dao;
+package dao;
 
-import model.Contract;
+import dto.Contract;
 import java.util.List;
 
 /**

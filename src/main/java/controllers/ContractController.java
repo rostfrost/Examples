@@ -1,6 +1,6 @@
 package controllers;
 
-import model.dao.ContractDaoImpl;
+import dao.ContractDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;

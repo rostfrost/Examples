@@ -1,6 +1,6 @@
 package service;
 
-import model.Contract;
+import dto.Contract;
 
 import java.util.List;
 

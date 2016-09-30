@@ -1,7 +1,7 @@
 package service;
 
-import model.Contract;
-import model.dao.ContractDaoImpl;
+import dto.Contract;
+import dao.ContractDaoImpl;
 import java.util.ArrayList;
 import java.util.List;
 

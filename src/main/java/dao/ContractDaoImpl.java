@@ -1,6 +1,6 @@
-package model.dao;
+package dao;
 
-import model.Contract;
+import dto.Contract;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
